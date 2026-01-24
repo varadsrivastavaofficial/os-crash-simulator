@@ -98,11 +98,7 @@ export default function Home() {
         pressCount++;
         lastPress = time;
         if (pressCount === 3) {
-          if (state.mode === 'stall') {
-            dispatch({ type: 'CHANGE_MODE', payload: { mode: 'eject' } });
-          } else { // 'eject'
-            handleStop();
-          }
+          handleStop();
           pressCount = 0;
         }
       }
@@ -115,7 +111,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [state.active, state.mode, handleStop]);
+  }, [state.active, handleStop]);
   
   // Fullscreen management
   useEffect(() => {
