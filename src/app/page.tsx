@@ -120,8 +120,10 @@ export default function Home() {
   // Fullscreen management
   useEffect(() => {
     const onFullscreenChange = () => {
+      // If the user manually exits fullscreen, we no longer automatically stop the simulation.
+      // The triple-escape hatch is the only way to exit.
       if (!document.fullscreenElement && state.active) {
-        handleStop(); // If user manually exits, stop simulation.
+        // handleStop(); // This was causing the single-escape exit.
       }
     };
     
@@ -134,7 +136,7 @@ export default function Home() {
         document.removeEventListener('fullscreenchange', onFullscreenChange);
       }
     };
-  }, [state.active, enterFullscreen, handleStop, isClient]);
+  }, [state.active, isClient]);
 
   // Handle first click to enter fullscreen if simulation is active
   useEffect(() => {
