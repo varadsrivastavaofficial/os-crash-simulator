@@ -21,7 +21,7 @@ export default function WindowsBSOD() {
           </div>
           <div className="text-lg">
             <p>For more information about this issue and possible fixes, visit</p>
-            <p>{qrUrl}</p>
+            <p>https://www.windows.com/stopcode</p>
             <p className="mt-4">If you call a support person, give them this info:</p>
             <p>Stop code: {stopCode}</p>
           </div>
