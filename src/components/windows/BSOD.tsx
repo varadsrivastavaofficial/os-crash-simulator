@@ -2,7 +2,7 @@ import QRCode from '@/components/common/QRCode';
 
 export default function WindowsBSOD() {
   const stopCode = "CRITICAL_PROCESS_DIED";
-  const qrUrl = "https://www.windows.com/stopcode";
+  const qrUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center bg-[#0078d4] p-8 font-segoe text-white sm:p-20">
