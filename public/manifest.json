@@ -1,0 +1,16 @@
+{
+  "name": "OS Failure Simulator",
+  "short_name": "OS Sim",
+  "description": "A simulated OS failure experience that you can install on your device.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "fullscreen",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
