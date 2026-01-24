@@ -18,7 +18,8 @@ type SimulationState = {
 
 type Action = 
   | { type: 'START_SIMULATION'; payload: { os: OS; mode: Mode } }
-  | { type: 'STOP_SIMULATION' };
+  | { type: 'STOP_SIMULATION' }
+  | { type: 'CHANGE_MODE'; payload: { mode: Mode } };
 
 const initialState: SimulationState = {
   os: 'windows',
@@ -39,6 +40,11 @@ function reducer(state: SimulationState, action: Action): SimulationState {
       return {
         ...state,
         active: false,
+      };
+    case 'CHANGE_MODE':
+      return {
+        ...state,
+        mode: action.payload.mode,
       };
     default:
       return state;
@@ -92,7 +98,12 @@ export default function Home() {
         pressCount++;
         lastPress = time;
         if (pressCount === 3) {
-          handleStop();
+          if (state.mode === 'stall') {
+            dispatch({ type: 'CHANGE_MODE', payload: { mode: 'eject' } });
+          } else { // 'eject'
+            handleStop();
+          }
+          pressCount = 0;
         }
       }
     };
@@ -104,7 +115,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [state.active, handleStop]);
+  }, [state.active, state.mode, handleStop]);
   
   // Fullscreen management
   useEffect(() => {
