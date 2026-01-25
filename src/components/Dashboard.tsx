@@ -20,13 +20,13 @@ export default function Dashboard({ onStart }: DashboardProps) {
   return (
     <div className="flex h-screen w-screen items-center justify-center p-4">
        <ElectricBorder
-        color="#32CD32" 
+        color="#00FF00" 
         speed={1}
         chaos={0.05}
         thickness={2}
         borderRadius={8} 
       >
-        <Card className="w-full max-w-md border-0 bg-card/80 backdrop-blur-sm">
+        <Card className="w-full max-w-lg border-0 bg-card/80 backdrop-blur-sm">
             <CardHeader>
             <CardTitle className="text-center text-2xl font-headline">OS Failure Simulator</CardTitle>
             </CardHeader>

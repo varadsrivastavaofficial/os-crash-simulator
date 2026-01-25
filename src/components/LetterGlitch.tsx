@@ -20,7 +20,7 @@ type LetterGlitchProps = {
 };
 
 const LetterGlitch = ({
-  glitchColors = ['#2b4539', '#61dca3', '#61b3dc'],
+  glitchColors = ['#104210', '#32CD32', '#00FF00'],
   className = '',
   glitchSpeed = 50,
   centerVignette = false,
