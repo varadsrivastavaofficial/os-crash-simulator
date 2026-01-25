@@ -2,6 +2,7 @@
 
 import React, { useState, useReducer, useEffect, useCallback, useRef } from 'react';
 import dynamic from 'next/dynamic';
+import LetterGlitch from '@/components/LetterGlitch';
 
 const Dashboard = dynamic(() => import('@/components/Dashboard'), { ssr: false });
 const WindowsUpdateScreen = dynamic(() => import('@/components/windows/UpdateScreen'), { ssr: false });
@@ -171,8 +172,15 @@ export default function Home() {
   return (
     <main 
       ref={containerRef}
-      className={`h-screen w-screen bg-black ${state.active ? 'cursor-none' : ''}`}
+      className={`relative h-screen w-screen bg-black ${state.active ? 'cursor-none' : ''}`}
     >
+      {!state.active && <LetterGlitch
+          glitchSpeed={50}
+          centerVignette={true}
+          outerVignette={false}
+          smooth={true}
+        />
+      }
       {state.active && <SoundController active={state.active} mode={state.mode} />}
       {renderSimulation()}
     </main>
