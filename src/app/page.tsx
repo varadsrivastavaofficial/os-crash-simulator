@@ -177,7 +177,7 @@ export default function Home() {
       {!state.active && <LetterGlitch
           glitchSpeed={50}
           centerVignette={true}
-          outerVignette={false}
+          outerVignette={true}
           smooth={true}
         />
       }

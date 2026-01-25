@@ -26,7 +26,7 @@ export default function Dashboard({ onStart }: DashboardProps) {
         thickness={2}
         borderRadius={8} 
       >
-        <Card className="w-full max-w-lg border-0 bg-card/80 backdrop-blur-sm">
+        <Card className="w-full max-w-xl border-0 bg-card/80 backdrop-blur-sm">
             <CardHeader>
             <CardTitle className="text-center text-2xl font-headline">OS Failure Simulator</CardTitle>
             </CardHeader>
