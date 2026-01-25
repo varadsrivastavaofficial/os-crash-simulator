@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   basePath: `/${repoName}`,
   assetPrefix: `/${repoName}/`,
+  trailingSlash: true,
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
