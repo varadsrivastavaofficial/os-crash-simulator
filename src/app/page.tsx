@@ -1,12 +1,15 @@
 "use client";
 
 import React, { useState, useReducer, useEffect, useCallback, useRef } from 'react';
-import Dashboard from '@/components/Dashboard';
-import WindowsUpdateScreen from '@/components/windows/UpdateScreen';
-import WindowsBSOD from '@/components/windows/BSOD';
-import MacOSUpdateScreen from '@/components/macos/UpdateScreen';
-import MacOSKernelPanicScreen from '@/components/macos/KernelPanicScreen';
-import SoundController from '@/components/SoundController';
+import dynamic from 'next/dynamic';
+
+const Dashboard = dynamic(() => import('@/components/Dashboard'), { ssr: false });
+const WindowsUpdateScreen = dynamic(() => import('@/components/windows/UpdateScreen'), { ssr: false });
+const WindowsBSOD = dynamic(() => import('@/components/windows/BSOD'), { ssr: false });
+const MacOSUpdateScreen = dynamic(() => import('@/components/macos/UpdateScreen'), { ssr: false });
+const MacOSKernelPanicScreen = dynamic(() => import('@/components/macos/KernelPanicScreen'), { ssr: false });
+const SoundController = dynamic(() => import('@/components/SoundController'), { ssr: false });
+
 
 type OS = 'windows' | 'macos';
 type Mode = 'stall' | 'eject';
@@ -170,7 +173,7 @@ export default function Home() {
       ref={containerRef}
       className={`h-screen w-screen bg-black ${state.active ? 'cursor-none' : ''}`}
     >
-      <SoundController active={state.active} mode={state.mode} />
+      {state.active && <SoundController active={state.active} mode={state.mode} />}
       {renderSimulation()}
     </main>
   );
