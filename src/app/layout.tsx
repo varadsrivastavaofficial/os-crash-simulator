@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Blue Screen Simulator',
+  title: 'OS Failure Simulator',
   description: 'A simulated OS failure experience.',
 };
 
