@@ -5,7 +5,6 @@ const repoName = 'os-crash-simulator';
 const nextConfig: NextConfig = {
   output: 'export',
   basePath: `/${repoName}`,
-  trailingSlash: true,
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
