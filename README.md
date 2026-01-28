@@ -1,25 +1,21 @@
 # OS Failure Simulator
 
-This is a Next.js application that simulates common operating system failures like the Windows Blue Screen of Death (BSOD) and macOS Kernel Panics. It's built with Next.js, React, and Tailwind CSS.
+A fun, harmless prank app that simulates common operating system failures.
+
+## Live Site
+
+**You can use the live application here:** [**https://varadsrivastavaofficial.github.io/os-crash-simulator/**](https://varadsrivastavaofficial.github.io/os-crash-simulator/)
 
 ## Features
 
-- Simulate Windows 11 and macOS Sequoia failures.
-- Choose between an "Update Stall" or a full "Crash" simulation.
-- Immersive full-screen experience.
-- Fun, harmless prank for your friends or colleagues.
+- **Windows 11 Simulation**: Experience a Blue Screen of Death (BSOD) or a stuck update screen.
+- **macOS Sequoia Simulation**: Trigger a Kernel Panic or a frozen update.
+- **Immersive Experience**: The simulation goes full-screen for maximum effect.
+- **PWA Ready**: Install the app on your desktop or mobile device directly from the browser.
 
-## Getting Started & Installation
+## Development
 
-This project is a Progressive Web App (PWA), which means you can install it on your device and run it like a native app.
+This project was built in Firebase Studio and is deployed to GitHub Pages via GitHub Actions.
 
-1.  Open the application in your browser.
-2.  Click the "Install" icon that appears in the browser's address bar.
-3.  Follow the prompts to add the app to your desktop or home screen.
-4.  Launch the app and enjoy the simulation!
-
-## How to Contribute
-
-This project was built in Firebase Studio. You can open it there to make your own changes or improvements.
-
-To get started, take a look at `src/app/page.tsx`.
+- **To run locally**: `npm run dev`
+- **To contribute**: Open this project in Firebase Studio to make your changes.
